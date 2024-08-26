@@ -11,11 +11,16 @@ const DashboardHeader = () => {
 
   const dispatch = useDispatch();
 
-  return (
+
+  // Fallback to 'User' if author is null or undefined
+  const authorName = author ? author.charAt(0).toUpperCase() + author.slice(1) : 'User';
+
+ return (
     <>
     <div className="my-5 mx-8">
         <h1 className="text-3xl font-bold">
-            Hello {author.charAt(0).toUpperCase() + author.slice(1)},
+            Hello {authorName}
+            {/* {author.charAt(0).toUpperCase() + author.slice(1)}, */}
         </h1>
         <p>Welcome to your {role} dashboard</p>
     </div>
@@ -33,4 +38,4 @@ const DashboardHeader = () => {
   );
 };
 
-export default DashboardHeader
+export default DashboardHeader;

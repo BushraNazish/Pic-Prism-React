@@ -18,6 +18,12 @@ const DashboardSidebar = () => {
     const tab = useSelector((state) => state.nav.tab);
     const author = useSelector((state) => state.auth.author);
 
+
+    // Check if author is null or undefined before rendering
+    const authorInitial = author ? author.charAt(0).toUpperCase() : "U"; // Using "U" as a fallback initial
+
+
+
   return (
     <nav 
     className={`fixed z-10 ${
@@ -29,7 +35,8 @@ const DashboardSidebar = () => {
         <div>
             {/* Circle with my names first letter */}
             <div className="bg-black my-5 w-fit rounded-full py-4 px-6 text-white">
-                {author.charAt(0).toUpperCase()}
+                {/* {author.charAt(0).toUpperCase()} */}
+                {authorInitial}
             </div>
 
             {/* list items */}

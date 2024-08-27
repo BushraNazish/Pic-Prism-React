@@ -8,7 +8,7 @@ const {
     searchPosts,
     addToFavourites,
     removeFromFavourites,
-    getFavourites
+    getFavourites,
 } = require("../controllers/postController");
 
 router.post("/post/create", verifyToken, createPost);
